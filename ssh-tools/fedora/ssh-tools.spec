@@ -1,7 +1,7 @@
 Name:		ssh-tools
 Version:	1.5
 Release:	1%{?dist}
-Summary:	collection of various tools using ssh
+Summary:	Collection of various tools using ssh
 
 License:	GPLv3
 URL:		https://github.com/vaporup/%{name}/
@@ -35,7 +35,7 @@ help2man -n "prints server host keys in several formats"            -S SSH-TOOLS
 mkdir -p %{buildroot}/%{_bindir}
 mkdir -p %{buildroot}/%{_mandir}/man1/
 install -m 0755 ssh-* %{buildroot}/%{_bindir}/
-install -m 0755 man/* %{buildroot}/%{_mandir}/man1/
+install -m 0644 man/* %{buildroot}/%{_mandir}/man1/
 
 %files
 %license LICENSE
@@ -43,3 +43,5 @@ install -m 0755 man/* %{buildroot}/%{_mandir}/man1/
 %{_mandir}/man1/ssh-*.1.gz
 
 %changelog
+* Wed Jan 09 2019 Sven Wick <sven.wick@gmx.de> 1.5-1
+- Initial RPM release (#1662170)
