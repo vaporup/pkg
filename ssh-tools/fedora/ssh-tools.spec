@@ -1,16 +1,16 @@
-Name:		ssh-tools
-Version:	1.5
-Release:	1%{?dist}
-Summary:	Collection of various tools using ssh
+Name:           ssh-tools
+Version:        1.5
+Release:        1%{?dist}
+Summary:        Collection of various tools using ssh
 
-License:	GPLv3
-URL:		https://github.com/vaporup/%{name}/
-Source0:	https://github.com/vaporup/%{name}/archive/v%{version}.tar.gz
+License:        GPLv3
+URL:            https://github.com/vaporup/%{name}/
+Source0:        https://github.com/vaporup/%{name}/archive/v%{version}.tar.gz
 
-BuildArch:	noarch
-BuildRequires:	help2man
-Requires:	openssh-clients bash
-Recommends:	colordiff
+BuildArch:      noarch
+BuildRequires:  help2man
+Requires:       openssh-clients bash
+Recommends:     colordiff
 
 %description
 * ssh-ping: check if host is reachable using ssh_config
@@ -34,13 +34,13 @@ help2man -n "prints server host keys in several formats"            -S SSH-TOOLS
 %install
 mkdir -p %{buildroot}/%{_bindir}
 mkdir -p %{buildroot}/%{_mandir}/man1/
-install -m 0755 ssh-* %{buildroot}/%{_bindir}/
-install -m 0644 man/* %{buildroot}/%{_mandir}/man1/
+install -p -m 0755 ssh-* %{buildroot}/%{_bindir}/
+install -p -m 0644 man/* %{buildroot}/%{_mandir}/man1/
 
 %files
 %license LICENSE
 %{_bindir}/ssh-*
-%{_mandir}/man1/ssh-*.1.gz
+%{_mandir}/man1/ssh-*.1.*
 
 %changelog
 * Wed Jan 09 2019 Sven Wick <sven.wick@gmx.de> 1.5-1
